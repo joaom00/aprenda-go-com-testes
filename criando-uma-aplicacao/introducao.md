@@ -8,8 +8,9 @@ Aqui novos conceitos serão introduzidos para facilitar a escrita de grandes apl
 
 Até o final dessa seção você deve ter obtido um entendimento sólido de como escrever aplicações em Go com o apoio de testes.
 
-* [Servidor HTTP](servidor-http/servidor-http.md) - Vamos criar uma API que aceita requisições HTTP.
-* [Respostas em JSON e roteamentos](json.md) - Iremos evoluir nossa API para retornar objetos JSON e vamos explorar como fazer roteamentos.
-* [IO ](io.md) - Vamos salvar e ler dados de arquivos. Também vamos ordenar esses dados.
-* [Linha de comando](linha-de-comando.md) - Vamos criar uma aplicação que vai ser utilizada por linha de comando no terminal, para entendermos como podemos suportar múltiplas plataformas.
-* [Eventos](time.md) - Vamos agendar alguns eventos de processamento que irão acontecer dependendo do horário que usuário utilizou a aplicação.
+* [Servidor HTTP](servidor-http.md) - Vamos criar uma API que aceita requisições HTTP.
+* [Respostas em JSON e roteamentos](https://github.com/joaom00/aprenda-go-com-testes/tree/7a1039495497aa7bef254b2dfe6c985aa61c7cd3/criando-uma-aplicacao/json.md) - Iremos evoluir nossa API para retornar objetos JSON e vamos explorar como fazer roteamentos.
+* [IO ](https://github.com/joaom00/aprenda-go-com-testes/tree/7a1039495497aa7bef254b2dfe6c985aa61c7cd3/criando-uma-aplicacao/io.md) - Vamos salvar e ler dados de arquivos. Também vamos ordenar esses dados.
+* [Linha de comando](https://github.com/joaom00/aprenda-go-com-testes/tree/7a1039495497aa7bef254b2dfe6c985aa61c7cd3/criando-uma-aplicacao/linha-de-comando.md) - Vamos criar uma aplicação que vai ser utilizada por linha de comando no terminal, para entendermos como podemos suportar múltiplas plataformas.
+* [Eventos](https://github.com/joaom00/aprenda-go-com-testes/tree/7a1039495497aa7bef254b2dfe6c985aa61c7cd3/criando-uma-aplicacao/time.md) - Vamos agendar alguns eventos de processamento que irão acontecer dependendo do horário que usuário utilizou a aplicação.
+

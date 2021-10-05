@@ -4,37 +4,37 @@
 
 [Arte por Denise](https://twitter.com/deniseyu21)
 
-![Build Status](https://travis-ci.org/larien/aprenda-go-com-testes.svg?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/larien/aprenda-go-com-testes)](https://goreportcard.com/report/github.com/larien/aprenda-go-com-testes)
+![Build Status](https://travis-ci.org/larien/aprenda-go-com-testes.svg?main) [![Go Report Card](https://goreportcard.com/badge/github.com/larien/aprenda-go-com-testes)](https://goreportcard.com/report/github.com/larien/aprenda-go-com-testes)
 
--   Formatos: [Gitbook](https://larien.gitbook.io/aprenda-go-com-testes), [EPUB ou PDF](https://github.com/larien/aprenda-go-com-testes/releases)
--   Versão original: [English](https://quii.gitbook.io/learn-go-with-tests/)
+* Formatos: [Gitbook](https://larien.gitbook.io/aprenda-go-com-testes), [EPUB ou PDF](https://github.com/larien/aprenda-go-com-testes/releases)
+* Versão original: [English](https://quii.gitbook.io/learn-go-with-tests/)
 
 ## Motivação
 
--   Explore a linguagem Go escrevendo testes
--   **Tenha uma base com TDD**. O Go é uma boa linguagem para aprender TDD por ser simples de aprender e ter testes nativamente
--   Tenha confiança de que você será capaz de escrever sistemas robustos e bem testados em Go
--   [Assista a um vídeo ou leia sobre o motivo pelo qual testes unitários e TDD são importantes](outros/motivacao.md)
+* Explore a linguagem Go escrevendo testes
+* **Tenha uma base com TDD**. O Go é uma boa linguagem para aprender TDD por ser simples de aprender e ter testes nativamente
+* Tenha confiança de que você será capaz de escrever sistemas robustos e bem testados em Go
+* [Assista a um vídeo ou leia sobre o motivo pelo qual testes unitários e TDD são importantes](meta/motivacao.md)
 
 ## Índice
 
 ### Primeiros Passos com Go
 
 1. [Instalação do Go](primeiros-passos-com-go/instalacao-do-go.md) - Prepare o ambiente para produtividade.
-2. [Olá, mundo](primeiros-passos-com-go/ola-mundo/ola-mundo.md) - Declarando variáveis, constantes, declarações `if`/`else`, switch, escreva seu primeiro programa em Go e seu primeiro teste. Sintaxe de subteste e closures.
-3. [Inteiros](primeiros-passos-com-go/inteiros/inteiros.md) - Mais conteúdo sobre sintaxe de declaração de função e aprenda novas formas de melhorar a documentação do seu código.
-4. [Iteração](primeiros-passos-com-go/iteracao/iteracao.md) - Aprenda sobre `for` e benchmarking.
-5. [Arrays e slices](primeiros-passos-com-go/arrays-e-slices/arrays-e-slices.md) - Aprenda sobre arrays, slices, `len`, variáveis recebidas como argumentos, `range` e cobertura de testes.
-6. [Estruturas, métodos e interfaces](primeiros-passos-com-go/estruturas-metodos-e-interfaces/estruturas-metodos-e-interfaces.md) - Aprenda sobre `structs`, métodos, `interface` e testes orientados a tabela \(table driven tests\).
-7. [Ponteiros e erros](primeiros-passos-com-go/ponteiros-e-erros/ponteiros-e-erros.md) - Aprenda sobre ponteiros e erros.
-8. [Maps](primeiros-passos-com-go/maps/maps.md) - Aprenda sobre armazenamento de valores na estrutura de dados `map`.
-9. [Injeção de dependência](primeiros-passos-com-go/injecao-de-dependencia/injecao-de-dependencia.md) - Aprenda sobre injeção de dependência, qual sua relação com interfaces e uma introdução a I/O.
-10. [Mocks](primeiros-passos-com-go/mocks/mocks.md) - Use injeção de dependência com mocks para testar um código não testado.
-11. [Concorrência](primeiros-passos-com-go/concorrencia/concorrencia.md) - Aprenda como escrever código concorrente para tornar seu software mais rápido.
-12. [Select](primeiros-passos-com-go/select/select.md) - Aprenda a sincronizar processos assíncronos de forma elegante.
-13. [Reflexão](primeiros-passos-com-go/reflection/reflection.md) - Aprenda sobre reflexão.
-14. [Sync](primeiros-passos-com-go/sync/sync.md) - Conheça algumas funcionalidades do pacote `sync`, como `WaitGroup` e `Mutex`.
-15. [Contexto](primeiros-passos-com-go/contexto/contexto.md) - Use o pacote `context` para gerenciar e cancelar processos de longa duração.
+2. [Olá, mundo](primeiros-passos-com-go/ola-mundo.md) - Declarando variáveis, constantes, declarações `if`/`else`, switch, escreva seu primeiro programa em Go e seu primeiro teste. Sintaxe de subteste e closures.
+3. [Inteiros](primeiros-passos-com-go/inteiros.md) - Mais conteúdo sobre sintaxe de declaração de função e aprenda novas formas de melhorar a documentação do seu código.
+4. [Iteração](primeiros-passos-com-go/iteracao.md) - Aprenda sobre `for` e benchmarking.
+5. [Arrays e slices](primeiros-passos-com-go/arrays-e-slices.md) - Aprenda sobre arrays, slices, `len`, variáveis recebidas como argumentos, `range` e cobertura de testes.
+6. [Estruturas, métodos e interfaces](primeiros-passos-com-go/estruturas-metodos-e-interfaces.md) - Aprenda sobre `structs`, métodos, `interface` e testes orientados a tabela \(table driven tests\).
+7. [Ponteiros e erros](primeiros-passos-com-go/ponteiros-e-erros.md) - Aprenda sobre ponteiros e erros.
+8. [Maps](primeiros-passos-com-go/maps.md) - Aprenda sobre armazenamento de valores na estrutura de dados `map`.
+9. [Injeção de dependência](primeiros-passos-com-go/injecao-de-dependencia.md) - Aprenda sobre injeção de dependência, qual sua relação com interfaces e uma introdução a I/O.
+10. [Mocks](primeiros-passos-com-go/mocks.md) - Use injeção de dependência com mocks para testar um código não testado.
+11. [Concorrência](primeiros-passos-com-go/concorrencia.md) - Aprenda como escrever código concorrente para tornar seu software mais rápido.
+12. [Select](primeiros-passos-com-go/select.md) - Aprenda a sincronizar processos assíncronos de forma elegante.
+13. [Reflexão](primeiros-passos-com-go/reflection.md) - Aprenda sobre reflexão.
+14. [Sync](primeiros-passos-com-go/sync.md) - Conheça algumas funcionalidades do pacote `sync`, como `WaitGroup` e `Mutex`.
+15. [Contexto](primeiros-passos-com-go/contexto.md) - Use o pacote `context` para gerenciar e cancelar processos de longa duração.
 
 ### Criando uma aplicação
 
@@ -48,12 +48,12 @@ Novos conceitos serão apresentados para ajudar a escrever código de qualidade,
 
 No final desse capítulo, você deverá ter uma boa ideia de como escrever uma aplicação em Go testada.
 
--   [Servidor HTTP](criando-uma-aplicacao/servidor-http/servidor-http.md) - Vamos criar uma aplicação que espera por requisições HTTP e as responde.
--   [JSON, routing e aninhamento](criando-uma-aplicacao/json/json.md) - Vamos fazer nossos endpoints retornarem JSON e explorar como trabalhar com rotas.
--   [IO e classificação](criando-uma-aplicacao/io/io.md) - Vamos persistir e ler nossos dados do disco e falar sobre classificação de dados.
--   [Linha de comando e estrutura do projeto](criando-uma-aplicacao/linha-de-comando/linha-de-comando.md) - Suportar diversas aplicações em uma base de código e ler entradas da linha de comando.
--   [Tempo](criando-uma-aplicacao/time/time.md) - Usar o pacote `time` para programar atividades.
--   [Websockets](criando-uma-aplicacao/websockets/websockets.md) - Aprender a escrever e testar um servidor que usa websockets.
+* [Servidor HTTP](criando-uma-aplicacao/servidor-http.md) - Vamos criar uma aplicação que espera por requisições HTTP e as responde.
+* [JSON, routing e aninhamento](criando-uma-aplicacao/json.md) - Vamos fazer nossos endpoints retornarem JSON e explorar como trabalhar com rotas.
+* [IO e classificação](criando-uma-aplicacao/io.md) - Vamos persistir e ler nossos dados do disco e falar sobre classificação de dados.
+* [Linha de comando e estrutura do projeto](criando-uma-aplicacao/linha-de-comando.md) - Suportar diversas aplicações em uma base de código e ler entradas da linha de comando.
+* [Tempo](criando-uma-aplicacao/time.md) - Usar o pacote `time` para programar atividades.
+* [Websockets](criando-uma-aplicacao/websockets.md) - Aprender a escrever e testar um servidor que usa websockets.
 
 ### Dúvidas e respostas
 
@@ -63,15 +63,15 @@ Costumo ver perguntas nas Interwebs como:
 
 Se tiver esse tipo de dúvida, crie uma Issue no GitHub e vou tentar achar tempo para escrever um pequeno capítulo para resolver o problema. Acho que conteúdo como esse é valioso, já que está resolvendo problemas `reais` envolvendo testes que as pessoas têm.
 
--   [OS exec](duvidas-da-comunidade/os-exec/os-exec.md) - Um exemplo de como podemos usar o sistema operacional para executar comandos para buscar dados e manter nossa lógica de negócio testável.
--   [Tipos de erro](duvidas-da-comunidade/error-types/error-types.md) - Exemplo de como criar seus próprios tipos de erro para melhorar seus testes e tornar seu código mais fácil de se trabalhar.
+* [OS exec](perguntas-e-respostas/os-exec.md) - Um exemplo de como podemos usar o sistema operacional para executar comandos para buscar dados e manter nossa lógica de negócio testável.
+* [Tipos de erro](perguntas-e-respostas/error-types.md) - Exemplo de como criar seus próprios tipos de erro para melhorar seus testes e tornar seu código mais fácil de se trabalhar.
 
 ## Contribuição
 
--   _Esse projeto está em desenvolvimento_, tanto seu conteúdo original quanto sua tradução. Se tiver interesse em contribuir, por favor entre em contato.
--   Leia [contribuindo.md](outros/contribuindo.md) para algumas diretrizes.
--   Quer ajudar com a tradução para o português? Leia [traduzindo.md](outros/traduzindo.md) e entenda como o processo de tradução está organizado.
--   Tem ideias? Crie uma issue!
+* _Esse projeto está em desenvolvimento_, tanto seu conteúdo original quanto sua tradução. Se tiver interesse em contribuir, por favor entre em contato.
+* Leia [contribuindo.md](meta/contribuindo.md) para algumas diretrizes.
+* Quer ajudar com a tradução para o português? Leia [traduzindo.md](meta/traduzindo.md) e entenda como o processo de tradução está organizado.
+* Tem ideias? Crie uma issue!
 
 ## Explicação
 
@@ -115,21 +115,22 @@ Usando minha experiência de aprendizado em grupo e a minha própria, vou tentar
 
 ## Para quem isso foi feito
 
--   Pessoas que se interessam em aprender Go.
--   Pessoas que já sabem Go, mas querem explorar testes com TDD.
+* Pessoas que se interessam em aprender Go.
+* Pessoas que já sabem Go, mas querem explorar testes com TDD.
 
 ## O que vamos precisar
 
--   Um computador!
--   [Go instalado](https://golang.org/)
--   Um editor de texto
--   Experiência com programação. Entendimento de conceitos como `if`, variáveis, funções etc.
--   Se sentir confortável com o terminal
+* Um computador!
+* [Go instalado](https://golang.org/)
+* Um editor de texto
+* Experiência com programação. Entendimento de conceitos como `if`, variáveis, funções etc.
+* Se sentir confortável com o terminal
 
 ## Feedback
 
--   Para a versão em português, submita um PR [aqui](https://github.com/larien/aprenda-go-com-testes) ou entre em contato comigo pelo [meu site](https://larien.dev).
+* Para a versão em português, submita um PR [aqui](https://github.com/larien/aprenda-go-com-testes) ou entre em contato comigo pelo [meu site](https://larien.dev).
 
 [MIT license](https://github.com/larien/aprenda-go-com-testes/tree/09aafaeebaef4443e80a6216cc46fa3d7bfdabbb/LICENSE.md)
 
 [Logo criado por egonelbre](https://github.com/egonelbre) Que estrela!
+
