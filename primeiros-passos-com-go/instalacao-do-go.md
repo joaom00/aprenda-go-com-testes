@@ -4,8 +4,6 @@ As instruções oficiais de instalação do Go estão disponíveis [aqui](http:/
 
 Esse guia vai presumir que você está usando um gerenciador de pacotes como [Homebrew](https://brew.sh), [Chocolatey](https://chocolatey.org), [Apt](https://help.ubuntu.com/community/AptGet/Howto) ou [yum](https://access.redhat.com/solutions/9934).
 
-Para propósitos de demonstração, vamos te mostrar o procedimento de instalação para o OSX usando Homebrew.
-
 ## Instalação
 
 ### Mac OSX
@@ -19,7 +17,7 @@ xcode-select --install
 Depois, execute o comando a seguir para instalar o homebrew:
 
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 Agora você consegue instalar o Go:
@@ -39,13 +37,13 @@ go version go1.10 darwin/amd64
 
 ### Linux
 
-O processo de instalação é bem simples. Primeiro você precisa escolher e baixar a versão do Go que você deseja instalar. Para isso [acesse o site oficial](https://golang.org/) da linguagem e copie o da versão desejada \(Ex.: [https://dl.google.com/go/go1.13.linux-amd64.tar.gz](https://dl.google.com/go/go1.13.linux-amd64.tar.gz)\). Recomendamos instalar sempre a versão mais atual.
+O processo de instalação é bem simples. Primeiro você precisa escolher e baixar a versão do Go que você deseja instalar. Para isso [acesse o site oficial](https://golang.org/) da linguagem e copie o da versão desejada \(Ex.: [https://golang.org/dl/go1.17.1.linux-amd64.tar.gz](https://golang.org/dl/go1.17.1.linux-amd64.tar.gz)\). Recomendamos instalar sempre a versão mais atual.
 
 Para baixá-lo execute o seguinte comando no seu terminal.
 
 ```bash
 # selecione a versão  que você deseja instalar, no nosso exemplo estamos utilizando a versão 1.13
-VERSAO_GO=1.13
+VERSAO_GO=1.17
 cd ~
 curl -O "https://dl.google.com/go/go${VERSAO_GO}.linux-amd64.tar.gz"
 ```
@@ -53,25 +51,27 @@ curl -O "https://dl.google.com/go/go${VERSAO_GO}.linux-amd64.tar.gz"
 Agora descompacte os arquivos com o seguinte comando.
 
 ```bash
-tar xvf "go${VERSAO_GO}.linux-amd64.tar.gz"
+tar -C /usr/local -xzf "go${VERSAO_GO}.linux-amd64.tar.gz"
 ```
 
-E em seguida, mova os arquivos para o diretório de binário do seu usuário.
+Adicione `/usr/local/go/bin` à variável de ambiente PATH
 
 ```bash
-sudo mv go /usr/local
+export PATH=$PATH:/usr/local/go/bin
 ```
+
+**Nota**: adicione isso em seu .bashrc ou .zshrc, dependendo de qual shell você usa
 
 Agora teste a sua instalação.
 
 ```bash
 go version
-go version go1.13 linux/amd64
+go version go1.17 linux/amd64
 ```
 
 ### Windows
 
-Para usuários de Windows existem duas formas de instalação, através de um arquivo ZIP que requer que você configure algumas variáveis de ambiente ou uma arquivo MSI que faz toda a configuração automaticamente. Primeiro faça download da versão que você deseja instalar. Para isso [acesse o site oficial](https://golang.org/) da linguagem e copie o arquivo da versão desejada \(Ex.: [https://dl.google.com/go/go1.13.1.windows-amd64.msi](https://dl.google.com/go/go1.13.1.windows-amd64.msi)\). Recomendamos instalar sempre a versão mais atual.
+Para usuários de Windows existem duas formas de instalação, através de um arquivo ZIP que requer que você configure algumas variáveis de ambiente ou uma arquivo MSI que faz toda a configuração automaticamente. Primeiro faça download da versão que você deseja instalar. Para isso [acesse o site oficial](https://golang.org/) da linguagem e copie o arquivo da versão desejada \(Ex.: [https://golang.org/dl/go1.17.1.windows-amd64.msi](https://golang.org/dl/go1.17.1.windows-amd64.msi)\). Recomendamos instalar sempre a versão mais atual.
 
 #### Instalação via MSI
 
@@ -91,30 +91,38 @@ Nos próximos passos vamos configurar o ambiente Go. As [instruções abaixo](in
 
 ## O Ambiente Go
 
-O Go divide opiniões.
+### Módulos Go
 
-Por convenção, todo o código Go é colocado dentro de apenas um workspace \(pasta\). Esse workspace pode estar em qualquer lugar da sua máquina. Se você não especificar, o Go vai definir o $HOME/go como workspace padrão. Ele é identificado \(e modificado\) pela variável de ambiente [GOPATH](https://golang.org/cmd/go/#hdr-GOPATH_environment_variable).
+Módulos foram introduzidos no Go 1.11. Essa abordagem é o modo de construção padrão desde o Go 1.16, portanto, o uso de GOPATH não é recomendado.
 
-Você precisa definir a variável de ambiente para que possa utilizar futuramente em scripts, shells etc.
+Os módulos visam resolver problemas relacionados ao gerenciamento de dependências, seleção de versões e compilações reproduzíveis. Eles também permitem que os usuários executem código Go fora do `GOPATH`.
 
-Atualize seu .bash\_profile para conter os seguintes `exports`:
+Usar Módulos é bastante simples. Selecione qualquer diretório fora do GOPATH como a raiz do seu projeto e crie um novo módulo com o comando `go mod init`.
 
-```bash
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-```
+Um arquivo `go.mod` será gerado, contendo o caminho do módulo, a versão do Go e suas dependências, que são os outros módulos necessários para uma construção bem-sucedida.
 
-_Nota_ você deve abrir um novo terminal para definir essas variáveis de ambiente.
-
-O Go presume que seu workspace contenha uma estrutura de diretórios específica.
-
-Ele coloca seus arquivos em três diretórios: todo o código-fonte fica em `src`, os objetos dos pacotes ficam em `pkg` e os programas compilados são colocados em `bin`. É possível criar esses diretórios com o comando a seguir:
+Se nenhum `<caminho-modulo>` for especificado, `go mod init` tentará adivinhar o caminho do módulo a partir da estrutura de diretório. Ele também pode ser substituído fornecendo um argumento.
 
 ```bash
-mkdir -p $GOPATH/src $GOPATH/pkg $GOPATH/bin
+mkdir meu-projeto
+cd meu-projeto
+go mod init <caminho-modulo>
 ```
 
-Agora você é capaz de usar o _go get_ para que o `src/package/bin` seja instalado corretamente no diretório $GOPATH/xxx apropriado.
+Um arquivo `go.mod` é parecido com isso:
+
+```bash
+module cmd
+
+go 1.17
+```
+
+A documentação nativa fornece uma visão geral de todos os comandos `go mod` disponíveis.
+
+```bash
+go help mod
+go help mod init
+```
 
 ## Editor Go
 
@@ -135,7 +143,7 @@ code .
 O VS Code é lançado com poucos softwares habilidados. Você pode habilitar novos softwares instalando extensões. Para adicionar o suporte a Go, você deve instalar uma extensão. Existem várias disponíveis para o VS Code, mas uma excepcional é a do [Luke Hoban](https://github.com/Microsoft/vscode-go). Instale-a da forma a seguir:
 
 ```bash
-code --install-extension ms-vscode.go
+code --install-extension golang.go
 ```
 
 Quando abrir um arquivo Go pela primeira vez no VS Code, ele vai indicar que ferramentas de análises estão faltando. Clique no botão para instalá-las. A lista de ferramentas que são instaladas \(e usadas\) pelo VS Code estão disponíveis [aqui](https://github.com/Microsoft/vscode-go/wiki/Go-tools-that-the-Go-extension-depends-on).
@@ -155,7 +163,7 @@ Uma melhoria sob o linter padrão pode ser configurada usando o [GolangCI-Lint](
 Que pode ser instalada da seguinte forma:
 
 ```bash
-go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+brew install golangci/tap/golangci-lint
 ```
 
 ## Refatoração e suas ferramentas
